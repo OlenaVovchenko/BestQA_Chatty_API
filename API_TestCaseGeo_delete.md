@@ -1,8 +1,9 @@
 
-**01**Verify post can be deleted
+**01**
 
 ```gherkin
 
+Test case 1: Verify post can be deleted 
 Feature: Delete Post
 Scenario: Verify post can be deleted successfully
 Given the API server is running
