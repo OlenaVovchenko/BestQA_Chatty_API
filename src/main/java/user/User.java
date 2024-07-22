@@ -4,6 +4,8 @@ import com.google.gson.annotations.Expose;
 
 import java.util.Objects;
 
+import static org.apache.commons.lang3.ClassUtils.getClass;
+
 public class User {
     private String avatarUrl;
     private String name;

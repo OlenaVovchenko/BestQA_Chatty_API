@@ -2,6 +2,8 @@ package user;
 
 import java.util.Objects;
 
+import static org.apache.commons.lang3.ClassUtils.getClass;
+
 public class AuthorizationUser {
     private String email;
     private String password;

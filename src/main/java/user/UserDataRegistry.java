@@ -4,9 +4,8 @@ import com.github.javafaker.Faker;
 
 public class UserDataRegistry {
     private static final Faker FAKER = new Faker();
-    private static final String EMAIL = FAKER.internet().emailAddress();
-    private static final String name = FAKER.name().firstName();
-    private static final String surname = FAKER.name().lastName();
+    private static final String NAME = FAKER.name().firstName();
+    private static final String SURNAME = FAKER.name().lastName();
     private static final String PASSWORD = "1234hjkl";
     private static final String USER_ROLE = UserRole.USER.toString().toLowerCase();
     private static final String ADMIN_ROLE = UserRole.ADMIN.toString().toLowerCase();
@@ -17,26 +16,28 @@ public class UserDataRegistry {
     private static final String BACKGROUND_URL = "string";
     private static final boolean BLOCKED = true;
 
+
     private UserDataRegistry() {
     }
 
-    public static AuthorizationUser getUserForLogin(){
+    public static AuthorizationUser getUserForLogin(AuthorizationUser authUser){
         AuthorizationUser userForLogin = new AuthorizationUser();
-        userForLogin.setEmail(EMAIL);
-        userForLogin.setPassword(PASSWORD);
+        userForLogin.setEmail(authUser.getEmail());
+        userForLogin.setPassword(authUser.getPassword());
 
         return userForLogin;
     }
 
     public static AuthorizationUser getAdminRegistration(){
-        return new AuthorizationUser(EMAIL, PASSWORD, PASSWORD, ADMIN_ROLE);
+        return new AuthorizationUser(FAKER.internet().emailAddress(), PASSWORD, PASSWORD, ADMIN_ROLE);
     }
 
     public static AuthorizationUser getUserRegistration(){
-        return new AuthorizationUser(EMAIL, PASSWORD, PASSWORD, USER_ROLE);
+        return new AuthorizationUser(FAKER.internet().emailAddress(), PASSWORD, PASSWORD, USER_ROLE);
     }
 
     public static User getUpdatedUser(){
-        return new User(AVATAR_URL, name, surname, BIRTH_DATE, PHONE, GENDER, BACKGROUND_URL, BLOCKED);
+        return new User(AVATAR_URL, NAME, SURNAME, BIRTH_DATE, PHONE, GENDER, BACKGROUND_URL, BLOCKED);
     }
 }
+

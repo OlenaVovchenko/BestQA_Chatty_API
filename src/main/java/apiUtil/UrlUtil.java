@@ -10,7 +10,7 @@ public class UrlUtil {
     public static final String REFRESH_PATH = "/auth/refresh";
     public static final String AUTH_PATH = "/auth/login";
     public static final String GET_USER_PATH = "/me";
-    public static final String UPDATE_OR_DELETE_USER_PATH = "/users";
+    public static final String UPDATE_OR_DELETE_USER_PATH = "/users/";
     public static final String REGISTER_PATH = "/auth/register";
 
     public static final RequestSpecification specification = new RequestSpecBuilder()
