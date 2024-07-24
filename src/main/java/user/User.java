@@ -4,9 +4,9 @@ import com.google.gson.annotations.Expose;
 
 import java.util.Objects;
 
-import static org.apache.commons.lang3.ClassUtils.getClass;
-
 public class User {
+    @Expose(serialize = true, deserialize = false)
+    private String email;
     private String avatarUrl;
     private String name;
     private String surname;
@@ -14,6 +14,7 @@ public class User {
     private String phone;
     private String gender;
     private String backgroundUrl;
+    @Expose(serialize = false, deserialize = true)
     private boolean blocked;
     @Expose(serialize = true, deserialize = false)
     private String id;
@@ -23,8 +24,22 @@ public class User {
     public User() {
     }
 
-    public User(String avatarUrl, String name, String surname, String birthDate, String phone, String gender,
+    public User(String email, String avatarUrl, String name, String surname, String birthDate, String phone, String gender,
+                String backgroundUrl, boolean blocked) {
+        this.email = email;
+        this.avatarUrl = avatarUrl;
+        this.name = name;
+        this.surname = surname;
+        this.birthDate = birthDate;
+        this.phone = phone;
+        this.gender = gender;
+        this.backgroundUrl = backgroundUrl;
+        this.blocked = blocked;
+    }
+
+    public User(String email, String avatarUrl, String name, String surname, String birthDate, String phone, String gender,
                 String backgroundUrl, boolean blocked, String id, String role) {
+        this.email = email;
         this.avatarUrl = avatarUrl;
         this.name = name;
         this.surname = surname;
@@ -35,18 +50,6 @@ public class User {
         this.blocked = blocked;
         this.id = id;
         this.role = role;
-    }
-
-    public User(String avatarUrl, String name, String surname, String birthDate, String phone, String gender,
-                String backgroundUrl, boolean blocked) {
-        this.avatarUrl = avatarUrl;
-        this.name = name;
-        this.surname = surname;
-        this.birthDate = birthDate;
-        this.phone = phone;
-        this.gender = gender;
-        this.backgroundUrl = backgroundUrl;
-        this.blocked = blocked;
     }
 
     public String getAvatarUrl() {
@@ -127,6 +130,18 @@ public class User {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public boolean isBlocked() {
+        return blocked;
     }
 
     @Override

@@ -1,8 +1,7 @@
 package apiUtil;
 
-import io.restassured.response.Response;
-
 import static io.restassured.RestAssured.given;
+import io.restassured.response.Response;
 
 public class ApiRequests {
 
@@ -49,6 +48,7 @@ public class ApiRequests {
                 .response();
     }
 
+
     public static Response putRequest(String endpoint, Object updatedBody, int statusCode, String accessToken) {
         return given()
                 .spec(UrlUtil.specification)
@@ -76,3 +76,4 @@ public class ApiRequests {
                 .response();
     }
 }
+
