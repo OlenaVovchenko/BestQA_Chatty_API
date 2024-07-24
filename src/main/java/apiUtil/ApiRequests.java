@@ -1,7 +1,10 @@
 package apiUtil;
 
-import static io.restassured.RestAssured.given;
 import io.restassured.response.Response;
+
+import static apiUtil.UrlUtil.CREATE_POST_PATH;
+import static apiUtil.UrlUtil.UPDATE_OR_DELETE_USER_PATH;
+import static io.restassured.RestAssured.given;
 
 public class ApiRequests {
 
@@ -47,7 +50,30 @@ public class ApiRequests {
                 .extract()
                 .response();
     }
-
+    public static Response getPostRequest(int statusCode, String accessToken, String id) {
+        return given()
+                .spec(UrlUtil.specification)
+                .header("Authorization", "Bearer " + accessToken)
+                .when()
+                .get(UPDATE_OR_DELETE_USER_PATH + id + CREATE_POST_PATH)
+                .then()
+                .log().all()
+                .statusCode(statusCode)
+                .extract()
+                .response();
+    }
+    public static Response getPostInvalidPathRequest(int statusCode, String accessToken, String id) {
+        return given()
+                .spec(UrlUtil.specification)
+                .header("Authorization", "Bearer " + accessToken)
+                .when()
+                .get(UPDATE_OR_DELETE_USER_PATH + id )
+                .then()
+                .log().all()
+                .statusCode(statusCode)
+                .extract()
+                .response();
+    }
 
     public static Response putRequest(String endpoint, Object updatedBody, int statusCode, String accessToken) {
         return given()
