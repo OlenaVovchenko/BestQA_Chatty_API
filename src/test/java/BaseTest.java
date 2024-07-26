@@ -1,13 +1,13 @@
 import static apiUtil.ApiRequests.getRequest;
 import static apiUtil.ApiRequests.postRequest;
 import static apiUtil.ApiRequests.postRequestNoToken;
-import static apiUtil.ApiRequests.putRequest;
-import static apiUtil.UrlUtil.*;
+
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import user.AuthorizationUser;
+
+import static apiUtil.UrlUtil.*;
 import static user.UserDataRegistry.getAdminRegistration;
-import static user.UserDataRegistry.getUpdatedUser;
 import static user.UserDataRegistry.getUserForLogin;
 import static user.UserDataRegistry.getUserRegistration;
 import user.UserRole;
@@ -20,7 +20,7 @@ public class BaseTest {
     protected String refreshToken;
     protected String accessAdminToken;
     protected String refreshAdminToken;
-    protected AuthorizationUser authUser;
+    protected AuthorizationUser authRegisteredUser;
 
 
     public void setTokensAfterUserRegistration(UserRole role) {
@@ -41,17 +41,17 @@ public class BaseTest {
 
     private Response registerValidUser(UserRole role) {
         if (ADMIN == role) {
-            this.authUser = getAdminRegistration();
+            this.authRegisteredUser = getAdminRegistration();
         } else if (USER == role) {
-            this.authUser = getUserRegistration();
+            this.authRegisteredUser = getUserRegistration();
         } else {
             throw new IllegalArgumentException("User with unknown role");
         }
-        return postRequestNoToken(REGISTER_PATH, authUser, 201);
+        return postRequestNoToken(REGISTER_PATH, authRegisteredUser, 201);
     }
 
     public Response refreshTokens(UserRole role) {
-        if(ADMIN == role){
+        if (ADMIN == role) {
             return postRequest(REFRESH_PATH, refreshAdminToken, 200, accessAdminToken);
         } else if (USER == role) {
             return postRequest(REFRESH_PATH, refreshToken, 200, accessToken);
@@ -61,9 +61,9 @@ public class BaseTest {
 
     public Response loginRegisteredUser(UserRole role) {
         if (ADMIN == role) {
-            return postRequest(AUTH_PATH, getUserForLogin(authUser), 200, accessAdminToken);
+            return postRequest(AUTH_PATH, getUserForLogin(authRegisteredUser), 200, accessAdminToken);
         } else if (USER == role) {
-            return postRequest(AUTH_PATH, getUserForLogin(authUser), 200, accessToken);
+            return postRequest(AUTH_PATH, getUserForLogin(authRegisteredUser), 200, accessToken);
         }
         throw new IllegalArgumentException("User with unknown role");
     }
@@ -74,10 +74,10 @@ public class BaseTest {
                 .getString("id");
     }
 
-
-    //!!!recomedyy vinesti v test update user etot method
-    public Response updateUser() {
-        String idUser = getUserIdAfterRequest();
-        return putRequest(UPDATE_OR_DELETE_USER_PATH + idUser, getUpdatedUser(), 200, accessToken);
+    public String getPostIdAfterRequest() {
+        return getRequest(CREATE_POST_PATH, 200, accessToken)
+                .jsonPath()
+                .getString("id");
     }
+
 }

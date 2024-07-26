@@ -2,15 +2,20 @@ package user;
 
 import java.util.Objects;
 
-import static org.apache.commons.lang3.ClassUtils.getClass;
-
 public class AuthorizationUser {
     private String email;
     private String password;
+    private String newPassword;
     private String confirmPassword;
     private String role;
 
     public AuthorizationUser() {
+    }
+
+    public AuthorizationUser(String password, String newPassword) {
+        this.password = password;
+        this.newPassword = newPassword;
+
     }
 
     public AuthorizationUser(String email, String password, String confirmPassword, String role) {

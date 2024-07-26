@@ -12,6 +12,9 @@ public class UrlUtil {
     public static final String GET_USER_PATH = "/me";
     public static final String UPDATE_OR_DELETE_USER_PATH = "/users/";
     public static final String REGISTER_PATH = "/auth/register";
+    public static final String UPDATE_PASSWORD_PATH = "/user/password/update";
+    public static final String CREATE_POST_PATH = "/posts";
+
 
     public static final RequestSpecification specification = new RequestSpecBuilder()
             .setBaseUri(BASE_URL)
