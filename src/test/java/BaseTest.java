@@ -1,13 +1,12 @@
-import static apiUtil.ApiRequests.getRequest;
-import static apiUtil.ApiRequests.postRequest;
-import static apiUtil.ApiRequests.postRequestNoToken;
-import static apiUtil.UrlUtil.AUTH_PATH;
-import static apiUtil.UrlUtil.GET_USER_PATH;
-import static apiUtil.UrlUtil.REFRESH_PATH;
-import static apiUtil.UrlUtil.REGISTER_PATH;
+import apiUtil.UrlUtil;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import user.AuthorizationUser;
+
+import static apiUtil.ApiRequests.*;
+import static apiUtil.UrlUtil.*;
+import static apiUtil.UrlUtil.CREATE_POST_PATH;
+import static post.PostDataRegistry.createDefaultPost;
 import static user.UserDataRegistry.getAdminRegistration;
 import static user.UserDataRegistry.getUserForLogin;
 import static user.UserDataRegistry.getUserRegistration;
@@ -22,7 +21,6 @@ public class BaseTest {
     protected String accessAdminToken;
     protected String refreshAdminToken;
     protected AuthorizationUser authRegisteredUser;
-
 
     public void setTokensAfterUserRegistration(UserRole role) {
         JsonPath jsonPath = registerValidUser(role).jsonPath();

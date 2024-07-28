@@ -12,9 +12,13 @@ public class PostCreateTest extends AdminTest {
     public void postCreateTest() {
 
         Response response = postRequest(CREATE_POST_PATH, createDefaultPost(), 201, accessAdminToken);
-        assertEquals(201, response.getStatusCode(), "The response status is not as expected.");
+        assertEquals(201, response.getStatusCode(), "The response status is as expected.");
     }
-
+    @Test
+    public void postId(){
+        String idPost = postRequest(CREATE_POST_PATH, createDefaultPost(), 201, accessAdminToken).jsonPath().getString("id");
+        System.out.println( "This is ID Post " + idPost);
+    }
     @Test
     public void createPostBadRequestTest() {
 
@@ -25,6 +29,7 @@ public class PostCreateTest extends AdminTest {
     public void postCreateBadRequestTest() {
         postRequest(CREATE_POST_PATH, createDefaultPost(), 401, null);
     }
+
 }
 
 

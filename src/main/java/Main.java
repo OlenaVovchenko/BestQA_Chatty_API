@@ -1,3 +1,11 @@
+import io.restassured.path.json.JsonPath;
+import user.UserRole;
+
+import static apiUtil.ApiRequests.getRequest;
+import static apiUtil.UrlUtil.CREATE_POST_PATH;
+import static user.UserRole.ADMIN;
+import static user.UserRole.USER;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -54,9 +62,7 @@ public class Main {
 //                .log().all()
 //                .statusCode(200)
 //                .extract()
-//                .body();
-//
-
+//                .body();/
 
     }
 }

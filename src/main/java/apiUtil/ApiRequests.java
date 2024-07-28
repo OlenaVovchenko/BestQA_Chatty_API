@@ -74,6 +74,22 @@ public class ApiRequests {
                 .extract()
                 .response();
     }
+    public static String createPostAndGetId(Object post, String accessToken, String id) {
+        Response response = given()
+                .spec(UrlUtil.specification)
+                .header("Authorization", "Bearer " + accessToken)
+                .contentType("application/json")
+                .body(post)
+                .when()
+                .post(UPDATE_OR_DELETE_USER_PATH + id + CREATE_POST_PATH)
+                .then()
+                .log().all()
+                .statusCode(201)  // Проверяем, что статус код 201, что означает успешное создание
+                .extract()
+                .response();
+
+        return response.jsonPath().getString("id");  // Получаем ID из JSON ответа
+    }
 
     public static Response putRequest(String endpoint, Object updatedBody, int statusCode, String accessToken) {
         return given()
