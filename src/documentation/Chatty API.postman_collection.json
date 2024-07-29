@@ -1,0 +1,1372 @@
+{
+	"info": {
+		"_postman_id": "1277e731-d200-4629-867c-9fe9a581396f",
+		"name": "Chatty API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33123752"
+	},
+	"item": [
+		{
+			"name": "Registration user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"Bearer_user\", pm.response.json().accessToken);\r",
+							"pm.environment.set(\"Bearer_refresh_user\", pm.response.json().refreshToken);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"uz123397@slkfjl.com\",\r\n  \"password\": \"jxNW~N5PTE\\\"FdRd\",\r\n  \"confirmPassword\": \"jxNW~N5PTE\\\"FdRd\",\r\n  \"role\": \"user\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl_chatty}}/api/auth/register",
+					"host": [
+						"{{baseUrl_chatty}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh token for user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"Bearer_user\", pm.response.json().accessToken);\r",
+							"pm.environment.set(\"Bearer_refresh_user\", pm.response.json().refreshToken);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Bearer_user}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"refreshToken\": \"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI5YTJlZjEzNC0xNjRkLTQ0OGYtYTI2YS1jY2M5MjAyOGU4NzMiLCJpYXQiOjE3MjEyMDUyNjcsImV4cCI6MTcyMTM3ODA2N30.IfBDN1c7higCMPmCe2qXqDOlw1HWKXEyRx9Be9PoqsM\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl_chatty}}/api/auth/refresh",
+					"host": [
+						"{{baseUrl_chatty}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"refresh"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"Bearer_user\", pm.response.json().accessToken);\r",
+							"pm.environment.set(\"Bearer_refresh_user\", pm.response.json().refreshToken);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Bearer_user}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"uz123397@slkfjl.com\",\r\n  \"password\": \"jxNW~N5PTE\\\"FdRd\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl_chatty}}/api/auth/login",
+					"host": [
+						"{{baseUrl_chatty}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"Bearer_user\", pm.response.json().accessToken);\r",
+							"pm.environment.set(\"Bearer_refresh_user\", pm.response.json().refreshToken);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Bearer_user}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl_chatty}}/api/me",
+					"host": [
+						"{{baseUrl_chatty}}"
+					],
+					"path": [
+						"api",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"Bearer_user\", pm.response.json().accessToken);\r",
+							"pm.environment.set(\"Bearer_refresh_user\", pm.response.json().refreshToken);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Bearer_user}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Boris\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl_chatty}}/api/users/9a2ef134-164d-448f-a26a-ccc92028e873",
+					"host": [
+						"{{baseUrl_chatty}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"9a2ef134-164d-448f-a26a-ccc92028e873"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update password",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"Bearer_user\", pm.response.json().accessToken);\r",
+							"pm.environment.set(\"Bearer_refresh_user\", pm.response.json().refreshToken);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Bearer_user}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"currentPassword\": \"kKNW~N5PTE\\\"FdRd\",\r\n  \"newPassword\": \"kKNW~N5PTE\\\"FdRj\",\r\n  \"confirmPassword\": \"kKNW~N5PTE\\\"FdRj\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl_chatty}}/api/user/password/update",
+					"host": [
+						"{{baseUrl_chatty}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"password",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get posts by user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"Bearer_user\", pm.response.json().accessToken);\r",
+							"pm.environment.set(\"Bearer_refresh_user\", pm.response.json().refreshToken);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Bearer_user}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl_chatty}}/api/users/9a2ef134-164d-448f-a26a-ccc92028e873/posts",
+					"host": [
+						"{{baseUrl_chatty}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"9a2ef134-164d-448f-a26a-ccc92028e873",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create post user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Bearer_user}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"ljfljggj;dogj\",\r\n  \"description\": \"alfjsfjofjodfjodjodjodjpodgjodpgjpodjolrtj\",\r\n  \"body\": \"jodgjdljg;dg;flkg\",\r\n  \"imageUrl\": \"string\",\r\n  \"publishDate\": \"\",\r\n  \"draft\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://chatty.telran-edu.de:8989/api/posts",
+					"protocol": "http",
+					"host": [
+						"chatty",
+						"telran-edu",
+						"de"
+					],
+					"port": "8989",
+					"path": [
+						"api",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get posts by id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"Bearer_user\", pm.response.json().accessToken);\r",
+							"pm.environment.set(\"Bearer_refresh_user\", pm.response.json().refreshToken);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Bearer_user}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl_chatty}}/api/posts/fe1ac9a7-be05-4346-adb0-ab31528051fb",
+					"host": [
+						"{{baseUrl_chatty}}"
+					],
+					"path": [
+						"api",
+						"posts",
+						"fe1ac9a7-be05-4346-adb0-ab31528051fb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update post",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"Bearer_user\", pm.response.json().accessToken);\r",
+							"pm.environment.set(\"Bearer_refresh_user\", pm.response.json().refreshToken);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Bearer_user}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Hello\",\r\n  \"description\": \"alfjsfjofjodfjodjodjodjpodgjodpgjpodjolrtj\",\r\n  \"body\": \"jodgjdljg;dg;flkg\",\r\n  \"imageUrl\": \"string\",\r\n  \"publishDate\": \"\",\r\n  \"draft\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl_chatty}}/api/users/posts/fe1ac9a7-be05-4346-adb0-ab31528051fb",
+					"host": [
+						"{{baseUrl_chatty}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"posts",
+						"fe1ac9a7-be05-4346-adb0-ab31528051fb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete post",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"Bearer_user\", pm.response.json().accessToken);\r",
+							"pm.environment.set(\"Bearer_refresh_user\", pm.response.json().refreshToken);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Bearer_user}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl_chatty}}/api/users/posts/fe1ac9a7-be05-4346-adb0-ab31528051fb",
+					"host": [
+						"{{baseUrl_chatty}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"posts",
+						"fe1ac9a7-be05-4346-adb0-ab31528051fb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all posts",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"Bearer_user\", pm.response.json().accessToken);\r",
+							"pm.environment.set(\"Bearer_refresh_user\", pm.response.json().refreshToken);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Bearer_user}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl_chatty}}/api/posts",
+					"host": [
+						"{{baseUrl_chatty}}"
+					],
+					"path": [
+						"api",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get draft posts",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"Bearer_user\", pm.response.json().accessToken);\r",
+							"pm.environment.set(\"Bearer_refresh_user\", pm.response.json().refreshToken);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Bearer_user}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl_chatty}}/api/posts/drafts",
+					"host": [
+						"{{baseUrl_chatty}}"
+					],
+					"path": [
+						"api",
+						"posts",
+						"drafts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send feedback",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"Bearer_user\", pm.response.json().accessToken);\r",
+							"pm.environment.set(\"Bearer_refresh_user\", pm.response.json().refreshToken);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Bearer_user}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Boris\",\r\n  \"email\": \"uz123397@slkfjl.com\",\r\n  \"content\": \"hello all is well\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl_chatty}}/api/feedback",
+					"host": [
+						"{{baseUrl_chatty}}"
+					],
+					"path": [
+						"api",
+						"feedback"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registration admin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"Bearer_admin\", pm.response.json().accessToken);\r",
+							"pm.environment.set(\"Bearer_admin_refresh\", pm.response.json().refreshToken);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"1pdlkadmig@slkfjl.com\",\r\n  \"password\": \"pKNW~N5PTZ\\\"FdRd\",\r\n  \"confirmPassword\": \"pKNW~N5PTZ\\\"FdRd\",\r\n  \"role\": \"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl_chatty}}/api/auth/register",
+					"host": [
+						"{{baseUrl_chatty}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh token for user admin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"Bearer_admin\", pm.response.json().accessToken);\r",
+							"pm.environment.set(\"Bearer_admin_refresh\", pm.response.json().refreshToken);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Bearer_admin}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"refreshToken\": \"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMTlhYjcyOS01OGY1LTQ1Y2YtYjFlZC1hMzRiNGNiMzFmYTgiLCJpYXQiOjE3MjEyMDU2MzcsImV4cCI6MTcyMTM3ODQzN30.3lfdnv6pPP37DgD3sALIuapghMdLcz2mo4V7fnLnNnQ\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl_chatty}}/api/auth/refresh",
+					"host": [
+						"{{baseUrl_chatty}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"refresh"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login admin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"Bearer_admin\", pm.response.json().accessToken);\r",
+							"pm.environment.set(\"Bearer_admin_refresh\", pm.response.json().refreshToken);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Bearer_admin}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"1pdlkadmig@slkfjl.com\",\r\n  \"password\": \"pKNW~N5PTZ\\\"FdRd\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://chatty.telran-edu.de:8989/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"chatty",
+						"telran-edu",
+						"de"
+					],
+					"port": "8989",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update user with admin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"Bearer_admin\", pm.response.json().accessToken);\r",
+							"pm.environment.set(\"Bearer_admin_refresh\", pm.response.json().refreshToken);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Bearer_admin}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Boris\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl_chatty}}/api/users/9a2ef134-164d-448f-a26a-ccc92028e873",
+					"host": [
+						"{{baseUrl_chatty}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"9a2ef134-164d-448f-a26a-ccc92028e873"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update password with admin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"Bearer_admin\", pm.response.json().accessToken);\r",
+							"pm.environment.set(\"Bearer_admin_refresh\", pm.response.json().refreshToken);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Bearer_admin}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"currentPassword\": \"pKNW~N5PTZ\\\"FdRd\",\r\n  \"newPassword\": \"pKNW~N5PTZ\\\"FdRj\",\r\n  \"confirmPassword\": \"pKNW~N5PTZ\\\"FdRj\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl_chatty}}/api/user/password/update",
+					"host": [
+						"{{baseUrl_chatty}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"password",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete user with admin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"Bearer_admin\", pm.response.json().accessToken);\r",
+							"pm.environment.set(\"Bearer_admin_refresh\", pm.response.json().refreshToken);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Bearer_admin}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl_chatty}}/api/users/cfda7784-7c21-4ec3-b02a-5cb051ccc394",
+					"host": [
+						"{{baseUrl_chatty}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"cfda7784-7c21-4ec3-b02a-5cb051ccc394"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create post admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Bearer_admin}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"ljfljggj;dogj\",\r\n  \"description\": \"alfjsfjofjodfjodjodjodjpodgjodpgjpodjolrtj\",\r\n  \"body\": \"jodgjdljg;dg;flkg\",\r\n  \"imageUrl\": \"string\",\r\n  \"publishDate\": \"\",\r\n  \"draft\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl_chatty}}/api/posts",
+					"host": [
+						"{{baseUrl_chatty}}"
+					],
+					"path": [
+						"api",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get post by id admin",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Bearer_admin}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl_chatty}}/api/posts/4cddcdcc-f561-4dbb-9a97-1a4392d698d0",
+					"host": [
+						"{{baseUrl_chatty}}"
+					],
+					"path": [
+						"api",
+						"posts",
+						"4cddcdcc-f561-4dbb-9a97-1a4392d698d0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update post  admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Bearer_admin}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Hello world\",\r\n  \"description\": \"alfjsfjofjodfjodjodjodjpodgjodpgjpodjolrtj\",\r\n  \"body\": \"jodgjdljg;dg;flkg\",\r\n  \"imageUrl\": \"string\",\r\n  \"publishDate\": \"\",\r\n  \"draft\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl_chatty}}/api/posts/4cddcdcc-f561-4dbb-9a97-1a4392d698d0",
+					"host": [
+						"{{baseUrl_chatty}}"
+					],
+					"path": [
+						"api",
+						"posts",
+						"4cddcdcc-f561-4dbb-9a97-1a4392d698d0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delate post  admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Bearer_admin}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl_chatty}}/api/posts/f6d2a124-711c-4665-9951-23f29669be30",
+					"host": [
+						"{{baseUrl_chatty}}"
+					],
+					"path": [
+						"api",
+						"posts",
+						"f6d2a124-711c-4665-9951-23f29669be30"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all posts admin",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Bearer_admin}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl_chatty}}/api/posts",
+					"host": [
+						"{{baseUrl_chatty}}"
+					],
+					"path": [
+						"api",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get draft posts admin",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Bearer_admin}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl_chatty}}/api/posts/drafts",
+					"host": [
+						"{{baseUrl_chatty}}"
+					],
+					"path": [
+						"api",
+						"posts",
+						"drafts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send feedback admin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"Bearer_admin\", pm.response.json().accessToken);\r",
+							"pm.environment.set(\"Bearer_admin_refresh\", pm.response.json().refreshToken);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Bearer_admin}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Boris\",\r\n  \"email\": \"1pdlkadmig@slkfjl.com\",\r\n  \"content\": \"hello all is well\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl_chatty}}/api/feedback",
+					"host": [
+						"{{baseUrl_chatty}}"
+					],
+					"path": [
+						"api",
+						"feedback"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all users admin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"Bearer_admin\", pm.response.json().accessToken);\r",
+							"pm.environment.set(\"Bearer_admin_refresh\", pm.response.json().refreshToken);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Bearer_admin}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl_chatty}}/api/users",
+					"host": [
+						"{{baseUrl_chatty}}"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
