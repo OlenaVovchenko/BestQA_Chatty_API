@@ -11,7 +11,6 @@ import static user.PostDataRegistry.getInvalidPost;
 public class PostCreateTest extends AdminTest {
     @Test
     public void postCreateTest() {
-
         Response response = postRequest(CREATE_POST_PATH, createDefaultPost(), 201, accessAdminToken);
         assertEquals(201, response.getStatusCode(), "The response status is as expected.");
     }

@@ -39,8 +39,7 @@ public class UpdatePostTest extends AdminUserTest {
     @Test
     public void updateUserBadRequestTest() {
         String postId = getPostIdAfterRequest();
-        Post expectedPost = getUpdatedPost(postId);
-        Response putResponse = putRequest(CREATE_POST_PATH + postId, createDefaultPost(), 404, accessToken);
+         Response putResponse = putRequest(CREATE_POST_PATH + postId, createDefaultPost(), 404, accessToken);
 
     }
 
