@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="737ccef1-61b0-470e-a160-ab77c376b91a" name="Changes" comment="Post commit Test" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+      <option value="module" />
+    </option>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="lena" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="jdkForImporter" value="17" />
+        <option name="workspaceImportForciblyTurnedOn" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2jI4UHrkoeiI5giVwOvdx0aXPoi" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "Application.Mein.executor": "Run",
+    "JUnit.DeleteUserTest.deleteUserBadRequestTest.executor": "Run",
+    "JUnit.DeleteUserTest.deleteUserNoAuthorizationTest.executor": "Run",
+    "JUnit.DeleteUserTest.deleteUserTest.executor": "Run",
+    "JUnit.DeleteUserTest.executor": "Run",
+    "JUnit.GetPostsByUser.executor": "Run",
+    "JUnit.GetPostsByUser.getPostByUserTest.executor": "Run",
+    "JUnit.GetUser.getUserTest.executor": "Run",
+    "JUnit.PostCreateTest.executor": "Run",
+    "JUnit.PostCreateTest.postCreateTest.executor": "Run",
+    "JUnit.PostCreateTest.postId.executor": "Run",
+    "JUnit.PostCreateTest.pstId.executor": "Run",
+    "JUnit.Tedfghj.jhkjh.executor": "Run",
+    "JUnit.TestEx.createPostTest.executor": "Run",
+    "JUnit.TestEx.pstId.executor": "Run",
+    "JUnit.UpdatePassword.updatePasswordTest.executor": "Run",
+    "JUnit.UpdateUserTest.UpdateUserTest.executor": "Run",
+    "JUnit.UpdateUserTest.executor": "Run",
+    "JUnit.UpdateUserTest.updateUserBadRequestTest.executor": "Run",
+    "JUnit.UpdateUserTest.updateUserNoAuthorizationTest.executor": "Run",
+    "JUnit.UpdateUserTest.updateUserTest.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/Weiterbildung/Chatty/Chatty_API",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.25234374",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.importing"
+  }
+}]]></component>
+  <component name="RunManager" selected="JUnit.UpdateUserTest.updateUserBadRequestTest">
+    <configuration name="UpdatePassword.updatePasswordTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Chatty_API" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="UpdatePassword" />
+      <option name="METHOD_NAME" value="updatePasswordTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UpdateUserTest.UpdateUserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Chatty_API" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="UpdateUserTest" />
+      <option name="METHOD_NAME" value="UpdateUserTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UpdateUserTest.updateUserBadRequestTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Chatty_API" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="UpdateUserTest" />
+      <option name="METHOD_NAME" value="updateUserBadRequestTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UpdateUserTest.updateUserNoAuthorizationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Chatty_API" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="UpdateUserTest" />
+      <option name="METHOD_NAME" value="updateUserNoAuthorizationTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UpdateUserTest.updateUserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Chatty_API" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="UpdateUserTest" />
+      <option name="METHOD_NAME" value="updateUserTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.UpdateUserTest.updateUserTest" />
+        <item itemvalue="JUnit.UpdateUserTest.UpdateUserTest" />
+        <item itemvalue="JUnit.UpdateUserTest.updateUserNoAuthorizationTest" />
+        <item itemvalue="JUnit.UpdateUserTest.updateUserBadRequestTest" />
+        <item itemvalue="JUnit.UpdatePassword.updatePasswordTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.9-corretto-17.0.9-4caba194b151-107bc6b7" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="737ccef1-61b0-470e-a160-ab77c376b91a" name="Changes" comment="" />
+      <created>1721061272894</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1721061272894</updated>
+    </task>
+    <task id="LOCAL-00001" summary="first commit pom.xml">
+      <option name="closed" value="true" />
+      <created>1721062389368</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1721062389368</updated>
+    </task>
+    <task id="LOCAL-00002" summary="first commit Test">
+      <option name="closed" value="true" />
+      <created>1721062673111</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1721062673111</updated>
+    </task>
+    <task id="LOCAL-00003" summary="first commit Test">
+      <option name="closed" value="true" />
+      <created>1721496575369</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1721496575369</updated>
+    </task>
+    <task id="LOCAL-00004" summary="base commit Test">
+      <option name="closed" value="true" />
+      <created>1721669449975</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1721669449976</updated>
+    </task>
+    <task id="LOCAL-00005" summary="base commit Test">
+      <option name="closed" value="true" />
+      <created>1721807110044</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1721807110044</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Post commit Test">
+      <option name="closed" value="true" />
+      <created>1721837785210</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1721837785210</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Post commit Test">
+      <option name="closed" value="true" />
+      <created>1722193126959</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1722193126962</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="first commit" />
+    <MESSAGE value="first commit pom.xml" />
+    <MESSAGE value="first commit Test" />
+    <MESSAGE value="base commit Test" />
+    <MESSAGE value="Post commit Test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Post commit Test" />
+  </component>
+</project>
